@@ -1,6 +1,4 @@
 // script.js
-
-// Define your data as a JSON object
 const resumeData = {
     name: "Məhəmməd Baloğlanov",
     title: "Full Stack Dev.",
@@ -46,7 +44,7 @@ const resumeData = {
         },
         {
             date: "2013 - 2024",
-            title: "Masallı r. 3 saylı tam orta məktəb",
+            title: "N.3 Middle school, Masally",
             description: "Graduated with honors in general education with a focus on IT subjects."
         }
     ]
@@ -126,15 +124,28 @@ resumeData.education.forEach(edu => {
     educationList.appendChild(li);
 });
 
+let wExpanded = false;
+let eExpanded = false;
+
 // Functions for expanding/collapsing Work and Education
 function expandWork() {
+    wExpanded = !wExpanded;
     const workSection = document.getElementById("work_skills");
-    workSection.style.height = workSection.scrollHeight + "px";
+    workSection.style.height = wExpanded ? "auto" : "0";
+    
+    // Toggle plus/minus icon
+    const plusBtn = document.querySelector(".resume_work .plus-btn i");
+    plusBtn.className = wExpanded ? "fas fa-minus" : "fas fa-plus";
 }
 
 function expandEducation() {
+    eExpanded = !eExpanded;
     const eduSection = document.getElementById("education_skills");
-    eduSection.style.height = eduSection.scrollHeight + "px";
+    eduSection.style.height = eExpanded ? "auto" : "0";
+    
+    // Toggle plus/minus icon
+    const plusBtn = document.querySelector(".resume_education .plus-btn i");
+    plusBtn.className = eExpanded ? "fas fa-minus" : "fas fa-plus";
 }
 
 // Functions for adding skills and languages
@@ -149,7 +160,7 @@ function addSkill() {
             <div class="skill_progress">
                 <span style="width: ${skillLevel}px;"></span>
             </div>
-            <div class="skill_per">${skillLevel}px</div>
+            <div class="skill_per">${skillLevel}%</div>
         `;
         document.getElementById("resume_skills").appendChild(li);
     }
@@ -164,9 +175,9 @@ function addLanguage() {
         li.innerHTML = `
             <div class="skill_name">${languageName}</div>
             <div class="skill_progress">
-                <span style="width: ${languageLevel};"></span>
+                <span style="width: ${languageLevel}px;"></span>
             </div>
-            <div class="skill_per">${languageLevel}</div>
+            <div class="skill_per">${languageLevel}%</div>
         `;
         document.getElementById("language_skills").appendChild(li);
     }
