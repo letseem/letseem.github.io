@@ -185,9 +185,15 @@ margin-bottom: 0;
 
 button{
     font-size: 15px;
-    padding: 6px 8px;
+    padding: 8px 12px;
+    background: #393E46;
+    border: none;
+    cursor: pointer;
 }
 
+button:hover{
+    opacity: 0.8;
+}
 
 #education_skills, #work_skills {
     transition: height 0.5s;
