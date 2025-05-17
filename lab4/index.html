@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="resume">
+    <div class="resume_left">
+      <div class="resume_profile">
+        <img src="" alt="profile_pic">
+      </div>
+      <div class="resume_content">
+        <div class="resume_item resume_info">
+          <div class="title">
+            <p class="bold"></p>
+            <p class="regular"></p>
+          </div>
+          <ul>
+            <li>
+              <div class="icon"><i class="fas fa-map-signs"></i></div>
+              <div class="data"></div>
+              <button class="btn" onclick="editLocation()"><i class="fas fa-edit"></i></button>
+            </li>
+            <li>
+              <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+              <div class="data"></div>
+              <button class="btn" onclick="editPhone()"><i class="fas fa-edit"></i></button>
+            </li>
+            <li>
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="data"></div>
+              <button class="btn" onclick="editEmail()"><i class="fas fa-edit"></i></button>
+            </li>
+            <li>
+              <div class="icon"><i class="fab fa-weebly"></i></div>
+              <div class="data"></div>
+              <button class="btn" onclick="editWebsite()"><i class="fas fa-edit"></i></button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="resume_item resume_skills">
+          <div class="title">
+            <p class="bold">Skill's.</p>
+          </div>
+          <ul id="resume_skills"></ul>
+          <button class="btn" onclick="addSkill()">Add skill</button>
+        </div>
+
+        <div class="resume_item resume_skills">
+          <div class="title">
+            <p class="bold">Languages</p>
+          </div>
+          <ul id="language_skills"></ul>
+          <button class="btn" onclick="addLanguage()">Add language</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="resume_right">
+      <div class="resume_item resume_about">
+        <div class="title">
+          <p class="bold" contenteditable="true">About me</p>
+        </div>
+        <p></p>
+      </div>
+
+      <div class="resume_item resume_work">
+        <div class="title">
+          <span class="bold">Work Experience</span>
+          <button class="plus-btn" onclick="expandWork()">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <ul id="work_skills" style="height: 0;"></ul>
+      </div>
+
+      <div class="resume_item resume_education">
+        <div class="title">
+          <span class="bold">Education</span>
+          <button class="plus-btn" onclick="expandEducation()">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <ul id="education_skills" style="height: 0;"></ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
